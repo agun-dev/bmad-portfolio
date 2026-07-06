@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { trackEvent } from "@/lib/analytics";
+import { CVDownloadButton } from "@/components/shared/CVDownloadButton";
 import { AvailabilityBadge } from "@/components/shared/AvailabilityBadge";
 import type { NavItem } from "@/types";
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Overview", href: "#hero", sectionId: "hero" },
-  { label: "Projects", href: "#portfolio", sectionId: "portfolio" },
   { label: "About", href: "#about", sectionId: "about" },
+  { label: "Projects", href: "#portfolio", sectionId: "portfolio" },
   { label: "Contact", href: "#contact", sectionId: "contact" },
 ];
 
@@ -68,25 +68,6 @@ function NavLinks({
   );
 }
 
-function CvDownloadButton({ className = "" }: { className?: string }) {
-  return (
-    <a
-      href="/cv.pdf"
-      download
-      onClick={() => trackEvent("cv_download", { method: "button_click" })}
-      className={[
-        "inline-flex w-full items-center justify-center rounded-lg bg-amber-400 px-5 py-2.5",
-        "font-bold text-black motion-safe:transition-colors motion-safe:duration-150",
-        "hover:bg-amber-500",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950",
-        className,
-      ].join(" ")}
-    >
-      Download CV ↓
-    </a>
-  );
-}
-
 export function Sidebar() {
   const activeSection = useSectionObserver();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -129,9 +110,7 @@ export function Sidebar() {
             <p className="text-base font-semibold text-foreground">
               Agun Gunawan
             </p>
-            <p className="text-sm text-muted-foreground">
-              Senior Frontend Developer
-            </p>
+            <p className="text-sm text-muted-foreground">Frontend Developer</p>
           </div>
           <AvailabilityBadge />
         </div>
@@ -146,7 +125,7 @@ export function Sidebar() {
 
         {/* CV download pinned to bottom */}
         <div className="px-4 py-4 border-t border-slate-800">
-          <CvDownloadButton />
+          <CVDownloadButton className="w-full justify-center" />
         </div>
       </aside>
 
@@ -229,7 +208,7 @@ export function Sidebar() {
               activeSection={activeSection}
               onLinkClick={() => setMobileOpen(false)}
             />
-            <CvDownloadButton />
+            <CVDownloadButton className="w-full justify-center" />
           </nav>
         </div>
       )}

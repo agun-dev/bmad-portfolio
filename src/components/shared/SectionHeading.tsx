@@ -1,10 +1,8 @@
-// src/components/shared/SectionHeading.tsx
-
 interface SectionHeadingProps {
   eyebrow: string;
   title: string;
   description?: string;
-  id?: string; // for aria-labelledby
+  id?: string;
 }
 
 export function SectionHeading({
