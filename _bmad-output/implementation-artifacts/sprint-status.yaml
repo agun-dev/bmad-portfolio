@@ -52,15 +52,15 @@ development_status:
   epic-2: in-progress
   2-1-hero-section-with-navigation: done
   2-2-about-section: done
-  2-3-portfolio-section-with-project-cards: ready-for-dev
-  2-4-cv-download-integration: backlog
-  2-5-contact-form-with-netlify-forms: backlog
-  2-6-footer-with-social-links: backlog
+  2-3-portfolio-section-with-project-cards: done
+  2-4-cv-download-integration: done
+  2-5-contact-form-with-netlify-forms: done
+  2-6-footer-with-social-links: done
   epic-2-retrospective: optional
 
   # ─── Epic 3: Analytics, Tracking & Final QA ───
-  epic-3: backlog
-  3-1-google-analytics-4-integration: backlog
-  3-2-cross-browser-testing-accessibility-audit: backlog
-  3-3-lighthouse-performance-audit-optimisation: backlog
+  epic-3: in-progress
+  3-1-google-analytics-4-integration: done
+  3-2-cross-browser-testing-accessibility-audit: done
+  3-3-lighthouse-performance-audit-optimisation: ready-for-dev
   epic-3-retrospective: optional

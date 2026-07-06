@@ -1,3 +1,5 @@
+import { CVDownloadButton } from "@/components/shared/CVDownloadButton";
+
 export function HeroSection() {
   return (
     <section
@@ -27,15 +29,16 @@ export function HeroSection() {
 
         {/* CTA buttons */}
         <div className="flex flex-wrap gap-4">
+          <CVDownloadButton />
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-lg bg-amber-400 px-6 py-3 font-bold text-black motion-safe:transition-colors motion-safe:duration-150 hover:bg-amber-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="inline-flex items-center justify-center rounded-lg border border-slate-700 px-6 py-3 font-semibold text-muted-foreground motion-safe:transition-colors motion-safe:duration-150 hover:border-slate-500 hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Get in Touch
           </a>
           <a
             href="#portfolio"
-            className="inline-flex items-center justify-center rounded-lg border border-slate-700 px-6 py-3 font-semibold text-muted-foreground motion-safe:transition-colors motion-safe:duration-150 hover:border-slate-500 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="inline-flex items-center justify-center rounded-lg border border-slate-700 px-6 py-3 font-semibold text-muted-foreground motion-safe:transition-colors motion-safe:duration-150 hover:border-slate-500 hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             View Projects
           </a>

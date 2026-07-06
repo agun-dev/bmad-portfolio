@@ -10,3 +10,10 @@ export interface SiteConfig {
   availability: boolean;
   cvPath: string;
 }
+
+export interface ContactFormValues {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
