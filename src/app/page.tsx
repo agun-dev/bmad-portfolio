@@ -1,6 +1,9 @@
 import { Sidebar } from "@/components/shared/Sidebar";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
+import { PortfolioSection } from "@/components/sections/PortfolioSection";
+import { ContactSection } from "@/components/sections/ContactSection";
+import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
   return (
@@ -20,11 +23,9 @@ export default function Home() {
         >
           <HeroSection />
           <AboutSection />
-          <section
-            id="portfolio"
-            className="min-h-screen py-20 px-6 lg:px-12"
-          />
-          <section id="contact" className="min-h-screen py-20 px-6 lg:px-12" />
+          <PortfolioSection />
+          <ContactSection />
+          <Footer />
         </main>
       </div>
     </>
