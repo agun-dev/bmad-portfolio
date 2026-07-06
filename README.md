@@ -2,7 +2,7 @@
 
 Personal portfolio website built with Next.js 15 and deployed to Netlify.
 
-🌐 **Live site:** [https://agunawan.netlify.app](https://agunawan.netlify.app)
+🌐 **Live site:** [https://agun-gunawan.vercel.app](https://agun-gunawan.vercel.app)
 
 ## Tech Stack
 

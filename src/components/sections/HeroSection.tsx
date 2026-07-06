@@ -10,7 +10,7 @@ export function HeroSection() {
       <div className="max-w-2xl">
         {/* Eyebrow label */}
         <p className="text-xs tracking-widest font-bold text-amber-400 uppercase mb-4">
-          Senior Frontend Developer
+          Frontend Web Developer
         </p>
 
         {/* Display heading */}

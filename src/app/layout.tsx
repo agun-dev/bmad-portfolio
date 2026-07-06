@@ -27,13 +27,13 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Agun Gunawan — Senior React & Webflow Developer",
+    default: "Agun Gunawan — Frontend Web Developer",
     template: "%s | Agun Gunawan",
   },
   description:
-    "Senior Frontend Developer with 8+ years of experience in React, Next.js, and Webflow. Crafting fast, accessible web experiences. Open to opportunities.",
+    "Frontend Web Developer with 8+ years of experience in React, Next.js, and Webflow. Crafting fast, accessible web experiences. Open to opportunities.",
   keywords: [
-    "senior react developer",
+    "frontend web developer",
     "webflow developer",
     "next.js developer",
     "frontend developer",
@@ -44,24 +44,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: SITE_URL,
-    title: "Agun Gunawan — Senior React & Webflow Developer",
+    title: "Agun Gunawan — Frontend Web Developer",
     description:
-      "Senior Frontend Developer with 8+ years of experience in React, Next.js, and Webflow. Crafting fast, accessible web experiences.",
+      "Frontend Web Developer with 8+ years of experience in React, Next.js, and Webflow. Crafting fast, accessible web experiences.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Agun Gunawan — Senior React & Webflow Developer",
+        alt: "Agun Gunawan — Frontend Web Developer",
       },
     ],
     siteName: "Agun Gunawan Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agun Gunawan — Senior React & Webflow Developer",
+    title: "Agun Gunawan — Frontend Web Developer",
     description:
-      "Senior Frontend Developer with 8+ years of experience in React, Next.js, and Webflow.",
+      "Frontend Web Developer with 8+ years of experience in React, Next.js, and Webflow.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -77,11 +77,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Agun Gunawan",
-  jobTitle: "Senior Frontend Developer",
+  jobTitle: "Frontend Web Developer",
   url: SITE_URL,
-  sameAs: [
-    "https://linkedin.com/in/agun-awan", // ⚠️ Replace with actual LinkedIn URL
-  ],
+  sameAs: ["https://linkedin.com/in/agun-awan"],
   knowsAbout: [
     "React",
     "Next.js",
