@@ -1,14 +1,15 @@
 export function AvailabilityBadge() {
   return (
     <span
-      aria-label="Currently open to work opportunities"
-      className="inline-flex items-center gap-1.5 bg-emerald-950/40 border border-emerald-500/30 text-emerald-400 text-xs font-semibold rounded-full px-3 py-1"
+      aria-label="Available for freelance & full-time roles"
+      className="inline-flex items-center text-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/50 px-3 py-1.5 text-xs font-semibold text-emerald-400 shadow-[0_0_12px_3px_oklch(0.696_0.17_162.48/0.25)] hover:shadow-[0_0_18px_4px_oklch(0.696_0.17_162.48/0.4)] motion-safe:transition-shadow motion-safe:duration-300"
     >
-      <span
-        className="h-2 w-2 rounded-full bg-emerald-400 motion-safe:animate-pulse"
-        aria-hidden="true"
-      />
-      Open to Work
+      {/* Pulsing live dot */}
+      <span className="relative flex size-2 shrink-0" aria-hidden="true">
+        <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+        <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
+      </span>
+      Available for freelance &amp; full-time roles
     </span>
   );
 }

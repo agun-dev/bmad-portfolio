@@ -14,7 +14,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="flex flex-col overflow-hidden bg-card border-border motion-safe:transition-colors motion-safe:duration-150 hover:border-amber-400/50">
+    <Card className="flex flex-col overflow-hidden border-border bg-card hover:border-amber-400/50 motion-safe:transition-colors motion-safe:duration-150">
       {/* Thumbnail */}
       <div className="relative aspect-video w-full">
         <Image
@@ -26,14 +26,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
         />
       </div>
 
-      <CardContent className="p-5 flex flex-col flex-1 space-y-3">
+      <CardContent className="flex flex-1 flex-col space-y-3 p-5">
         {/* Title */}
-        <h3 className="font-(family-name:--font-plus-jakarta-sans) text-xl font-semibold text-foreground leading-tight">
+        <h3 className="font-(family-name:--font-plus-jakarta-sans) text-xl leading-tight font-semibold text-foreground">
           {project.title}
         </h3>
 
         {/* Problem statement */}
-        <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+        <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
           {project.problem}
         </p>
 
@@ -50,7 +50,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <Button
               asChild
               variant="outline"
-              className="group flex items-center w-full border-amber-400 hover:bg-amber-400 hover:text-black mt-auto"
+              className="group mt-auto flex w-full items-center border-amber-400 hover:bg-amber-400 hover:text-black"
             >
               <a
                 href={project.liveUrl}

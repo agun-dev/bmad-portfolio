@@ -11,7 +11,7 @@ export default function Home() {
       {/* Skip to content — must be first focusable element in DOM */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-amber-400 text-black px-4 py-2 rounded z-50 font-semibold"
+        className="sr-only z-50 rounded bg-amber-400 px-4 py-2 font-semibold text-black focus:not-sr-only focus:absolute focus:top-4 focus:left-4"
       >
         Skip to content
       </a>
@@ -19,7 +19,7 @@ export default function Home() {
         <Sidebar />
         <main
           id="main-content"
-          className="flex-1 lg:ml-60 min-w-0 pt-16 lg:pt-0"
+          className="min-w-0 flex-1 pt-16 lg:ml-60 lg:pt-0"
         >
           <HeroSection />
           <AboutSection />

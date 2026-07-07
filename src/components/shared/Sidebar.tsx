@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { CVDownloadButton } from "@/components/shared/CVDownloadButton";
 import { AvailabilityBadge } from "@/components/shared/AvailabilityBadge";
@@ -91,21 +92,28 @@ export function Sidebar() {
   return (
     <>
       {/* ── Desktop Sidebar ─────────────────────────────── */}
-      <aside className="hidden lg:flex fixed inset-y-0 left-0 w-60 flex-col bg-slate-900 border-r border-slate-800 z-30">
+      <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 flex-col border-r border-slate-800 bg-slate-900 lg:flex">
         {/* Brand mark */}
-        <div className="flex items-center px-6 py-5 border-b border-slate-800">
+        <div className="flex items-center border-b border-slate-800 px-6 py-5">
           <span className="text-lg font-extrabold tracking-tight text-amber-400">
             AG.
           </span>
         </div>
 
         {/* Profile block */}
-        <div className="flex flex-col items-center gap-3 px-6 py-6 border-b border-slate-800">
-          {/* Avatar placeholder */}
-          <div
-            className="h-16 w-16 rounded-full bg-slate-700 ring-2 ring-amber-400 ring-offset-2 ring-offset-slate-900"
-            aria-hidden="true"
-          />
+        <div className="flex flex-col items-center gap-3 border-b border-slate-800 p-6">
+          {/* Avatar */}
+          <div className="relative size-16 overflow-hidden rounded-full ring-2 ring-amber-400 ring-offset-2 ring-offset-slate-900">
+            <Image
+              src="/me.png"
+              alt="Agun Gunawan"
+              fill
+              sizes="64px"
+              className="object-cover"
+              style={{ objectPosition: "center 10%" }}
+              priority
+            />
+          </div>
           <div className="text-center">
             <p className="text-base font-semibold text-foreground">
               Agun Gunawan
@@ -124,13 +132,13 @@ export function Sidebar() {
         </nav>
 
         {/* CV download pinned to bottom */}
-        <div className="px-4 py-4 border-t border-slate-800">
+        <div className="border-t border-slate-800 p-4">
           <CVDownloadButton className="w-full justify-center" />
         </div>
       </aside>
 
       {/* ── Mobile Top Bar ──────────────────────────────── */}
-      <header className="flex lg:hidden fixed inset-x-0 top-0 h-16 items-center justify-between px-4 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 z-30">
+      <header className="fixed inset-x-0 top-0 z-30 flex h-16 items-center justify-between border-b border-slate-800 bg-slate-900/95 px-4 backdrop-blur-md lg:hidden">
         {/* Logo */}
         <span className="text-lg font-extrabold tracking-tight text-amber-400">
           AG.
@@ -141,7 +149,7 @@ export function Sidebar() {
           aria-label="Open menu"
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(true)}
-          className="rounded-lg p-2 text-muted-foreground hover:text-foreground hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 motion-safe:transition-colors"
+          className="rounded-lg p-2 text-muted-foreground hover:bg-slate-800 hover:text-foreground focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none motion-safe:transition-colors"
         >
           {/* Hamburger icon */}
           <svg
@@ -168,10 +176,10 @@ export function Sidebar() {
           role="dialog"
           aria-modal="true"
           aria-label="Navigation menu"
-          className="lg:hidden fixed inset-0 z-40 flex flex-col bg-slate-900"
+          className="fixed inset-0 z-40 flex flex-col bg-slate-900 lg:hidden"
         >
           {/* Overlay header */}
-          <div className="flex items-center justify-between px-4 h-16 border-b border-slate-800">
+          <div className="flex h-16 items-center justify-between border-b border-slate-800 px-4">
             <span className="text-lg font-extrabold tracking-tight text-amber-400">
               AG.
             </span>
@@ -180,7 +188,7 @@ export function Sidebar() {
               type="button"
               aria-label="Close menu"
               onClick={() => setMobileOpen(false)}
-              className="rounded-lg p-2 text-muted-foreground hover:text-foreground hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 motion-safe:transition-colors"
+              className="rounded-lg p-2 text-muted-foreground hover:bg-slate-800 hover:text-foreground focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none motion-safe:transition-colors"
             >
               <svg
                 width="24"
@@ -202,7 +210,7 @@ export function Sidebar() {
           {/* Mobile nav links + CV */}
           <nav
             aria-label="Main navigation"
-            className="flex flex-col flex-1 px-4 py-6 gap-6"
+            className="flex flex-1 flex-col gap-6 px-4 py-6"
           >
             <NavLinks
               activeSection={activeSection}

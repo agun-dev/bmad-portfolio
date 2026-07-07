@@ -1,16 +1,24 @@
-// src/components/sections/PortfolioSection.tsx
-// NO "use client" — this is a Server Component
+"use client";
 
 import { projects } from "@/data/projects";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ProjectCard } from "@/components/sections/ProjectCard";
+import { useGsapReveal } from "@/hooks/useGsapReveal";
 
 export function PortfolioSection() {
+  const sectionRef = useGsapReveal<HTMLElement>({
+    selector: ".portfolio-card",
+    stagger: 0.1,
+    y: 30,
+    start: "top 85%",
+  });
+
   return (
     <section
+      ref={sectionRef}
       id="portfolio"
       aria-labelledby="portfolio-heading"
-      className="py-20 px-6 lg:px-12"
+      className="px-6 py-20 lg:px-12"
     >
       <div className="max-w-5xl">
         <SectionHeading
@@ -20,9 +28,11 @@ export function PortfolioSection() {
           id="portfolio-heading"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <div key={project.id} className="portfolio-card">
+              <ProjectCard project={project} />
+            </div>
           ))}
         </div>
       </div>

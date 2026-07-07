@@ -8,7 +8,9 @@ export interface AboutData {
 
 export const aboutData: AboutData = {
   bio: [
-    "A versatile Frontend Developer with over 8 years of professional experience specializing in modern layout architectures, responsive design, and content management systems. Expert in turning design concepts into highly optimized websites using HTML, CSS/SCSS, JavaScript, Tailwind CSS, WordPress, Elementor, and Webflow, while maintaining clean code through Git version control. Continually expanding technical horizons into modern JavaScript frameworks like React, Next.js, and TypeScript. A forward-thinking engineer who actively integrates AI-assisted development tools (vibe coding) to enhance engineering velocity, maintain productivity, and stay at the forefront of evolving web technologies.",
+    "Senior Frontend Developer with 8+ years of proven experience shipping production-ready web products that are fast, accessible, and conversion-focused. I specialize in building performant interfaces with React, Next.js, and TypeScript — as well as delivering high-impact no-code/low-code solutions via Webflow and WordPress/Elementor for rapid time-to-market.",
+    "My edge is bridging the gap between design and engineering: translating Figma concepts into pixel-perfect, maintainable code with a keen eye for detail. I work fluidly across the full frontend stack — from semantic HTML and CSS architecture to complex component systems and API-driven UIs.",
+    "Early adopter of AI-assisted development (vibe coding) — integrating tools like GitHub Copilot and LLM-driven workflows to multiply engineering velocity without sacrificing quality. Always learning, always shipping.",
   ],
   skills: [
     "HTML",
@@ -29,6 +31,8 @@ export const aboutData: AboutData = {
   yearsOfExperience: 8,
   currentRole: "Frontend Developer",
   highlights: [
-    "A versatile Frontend Developer with over 8 years of professional experience specializing in modern layout architectures, responsive design, and content management systems. Expert in turning design concepts into highly optimized websites using HTML, CSS/SCSS, JavaScript, Tailwind CSS, WordPress, Elementor, and Webflow, while maintaining clean code through Git version control. Continually expanding technical horizons into modern JavaScript frameworks like React, Next.js, and TypeScript. A forward-thinking engineer who actively integrates AI-assisted development tools (vibe coding) to enhance engineering velocity, maintain productivity, and stay at the forefront of evolving web technologies.",
+    "8+ years building production-ready web experiences across React, Next.js, Webflow, and WordPress.",
+    "Strong design-to-code pipeline — Figma to pixel-perfect, accessible, performant UI.",
+    "AI-assisted development advocate — shipping faster without cutting corners.",
   ],
 };

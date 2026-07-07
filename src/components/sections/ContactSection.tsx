@@ -19,6 +19,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { ContactFormValues } from "@/types";
+import { useGsapReveal } from "@/hooks/useGsapReveal";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Please enter your name"),
@@ -34,7 +35,7 @@ function ContactConfirmation() {
       aria-live="polite"
       className="flex flex-col items-center gap-4 py-16 text-center"
     >
-      <CheckCircle className="h-12 w-12 text-emerald-400" aria-hidden="true" />
+      <CheckCircle className="size-12 text-emerald-400" aria-hidden="true" />
       <h3 className="text-xl font-bold text-foreground">Message sent!</h3>
       <p className="text-muted-foreground">
         Thanks — I&apos;ll get back to you within 1–2 days.
@@ -45,7 +46,7 @@ function ContactConfirmation() {
           href="https://linkedin.com/in/agun-awan"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-amber-400 underline underline-offset-4 hover:text-amber-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded"
+          className="rounded text-amber-400 underline underline-offset-4 hover:text-amber-300 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
         >
           LinkedIn
         </a>
@@ -56,6 +57,7 @@ function ContactConfirmation() {
 }
 
 export function ContactSection() {
+  const sectionRef = useGsapReveal<HTMLElement>({ start: "top 80%" });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -96,7 +98,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 px-6 lg:px-12">
+    <section ref={sectionRef} id="contact" className="px-6 py-20 lg:px-12">
       <div className="max-w-2xl">
         <SectionHeading
           eyebrow="Get in Touch"
@@ -220,12 +222,12 @@ export function ContactSection() {
                 <Button
                   type="submit"
                   disabled={formState.isSubmitting}
-                  className="w-full sm:w-auto bg-amber-400 text-black hover:bg-amber-500 focus-visible:ring-amber-400 focus-visible:ring-offset-background"
+                  className="w-full bg-amber-400 text-black hover:bg-amber-500 focus-visible:ring-amber-400 focus-visible:ring-offset-background sm:w-auto"
                 >
                   {formState.isSubmitting ? (
                     <>
                       <Loader2
-                        className="mr-2 h-4 w-4 animate-spin"
+                        className="mr-2 size-4 animate-spin"
                         aria-hidden="true"
                       />
                       Sending…

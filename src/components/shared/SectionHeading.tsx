@@ -13,7 +13,7 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className="mb-12">
-      <p className="text-xs tracking-widest font-bold text-amber-400 uppercase mb-2">
+      <p className="mb-2 text-xs font-bold tracking-widest text-amber-400 uppercase">
         {eyebrow}
       </p>
       <h2
@@ -23,7 +23,7 @@ export function SectionHeading({
         {title}
       </h2>
       {description && (
-        <p className="text-lg text-muted-foreground leading-relaxed mt-4 max-w-prose">
+        <p className="mt-4 max-w-prose text-lg leading-relaxed text-muted-foreground">
           {description}
         </p>
       )}

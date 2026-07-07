@@ -4,8 +4,8 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="py-8 px-6 lg:px-12 border-t border-border">
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer className="border-t border-border px-6 py-8 lg:px-12">
+      <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
         <p className="text-sm text-muted-foreground">
           © {year} Agun Gunawan. All rights reserved.
         </p>
@@ -16,18 +16,18 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Agun Gunawan's LinkedIn profile (opens in new tab)"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-amber-400 motion-safe:transition-colors motion-safe:duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
+            className="inline-flex items-center gap-2 rounded text-sm text-muted-foreground hover:text-amber-400 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none motion-safe:transition-colors motion-safe:duration-150"
           >
-            <Linkedin className="h-4 w-4" aria-hidden="true" />
+            <Linkedin className="size-4" aria-hidden="true" />
             LinkedIn
           </a>
           {/* ⚠️ Replace with actual email before launch */}
           <a
             href="mailto:agun.gunawan@outlook.com"
             aria-label="Send an email to Agun Gunawan"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-amber-400 motion-safe:transition-colors motion-safe:duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
+            className="inline-flex items-center gap-2 rounded text-sm text-muted-foreground hover:text-amber-400 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background focus-visible:outline-none motion-safe:transition-colors motion-safe:duration-150"
           >
-            <Mail className="h-4 w-4" aria-hidden="true" />
+            <Mail className="size-4" aria-hidden="true" />
             Email
           </a>
         </div>
