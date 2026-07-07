@@ -4,11 +4,13 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { CVDownloadButton } from "@/components/shared/CVDownloadButton";
 import { AvailabilityBadge } from "@/components/shared/AvailabilityBadge";
+import { cn } from "@/lib/utils";
 import type { NavItem } from "@/types";
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Overview", href: "#hero", sectionId: "hero" },
   { label: "About", href: "#about", sectionId: "about" },
+  { label: "Skills", href: "#skills", sectionId: "skills" },
   { label: "Projects", href: "#portfolio", sectionId: "portfolio" },
   { label: "Contact", href: "#contact", sectionId: "contact" },
 ];
@@ -52,13 +54,13 @@ function NavLinks({
               href={href}
               onClick={onLinkClick}
               aria-current={isActive ? "page" : undefined}
-              className={[
+              className={cn(
                 "block rounded-lg px-4 py-2.5 text-sm font-medium motion-safe:transition-colors motion-safe:duration-150",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400",
+                "focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none",
                 isActive
-                  ? "bg-amber-950/40 text-amber-400 font-semibold"
+                  ? "bg-amber-950/40 font-semibold text-amber-400"
                   : "text-muted-foreground hover:bg-slate-800 hover:text-slate-100",
-              ].join(" ")}
+              )}
             >
               {label}
             </a>
@@ -95,8 +97,20 @@ export function Sidebar() {
       <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 flex-col border-r border-slate-800 bg-slate-900 lg:flex">
         {/* Brand mark */}
         <div className="flex items-center border-b border-slate-800 px-6 py-5">
-          <span className="text-lg font-extrabold tracking-tight text-amber-400">
-            AG.
+          <span className="h-4 w-12 text-lg font-extrabold tracking-tight text-amber-400">
+            <svg
+              width="155"
+              height="68"
+              viewBox="0 0 155 68"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-full w-full"
+            >
+              <path
+                d="M12.75 67.5H0L28.453.469h13.36L70.875 67.5h-13.36l-7.64-18.281H27.609l4.266-10.782h13.5l-10.547-25.17zm119.766-3.094q-8.11 3.563-20.297 3.563-35.484 0-35.485-34.922Q76.734 0 112.828 0q11.015 0 19.688 3.281v11.25q-8.673-3.75-18.75-3.75-24.141 0-24.141 22.266 0 24.14 22.781 24.14 3.375 0 7.688-1.124v-19.5h12.422zm21.796-8.39V67.5h-12.421V56.016z"
+                fill="currentColor"
+              />
+            </svg>
           </span>
         </div>
 
@@ -140,8 +154,20 @@ export function Sidebar() {
       {/* ── Mobile Top Bar ──────────────────────────────── */}
       <header className="fixed inset-x-0 top-0 z-30 flex h-16 items-center justify-between border-b border-slate-800 bg-slate-900/95 px-4 backdrop-blur-md lg:hidden">
         {/* Logo */}
-        <span className="text-lg font-extrabold tracking-tight text-amber-400">
-          AG.
+        <span className="h-7 w-7.75 text-lg font-extrabold tracking-tight text-amber-400">
+          <svg
+            width="155"
+            height="68"
+            viewBox="0 0 155 68"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-full w-full"
+          >
+            <path
+              d="M12.75 67.5H0L28.453.469h13.36L70.875 67.5h-13.36l-7.64-18.281H27.609l4.266-10.782h13.5l-10.547-25.17zm119.766-3.094q-8.11 3.563-20.297 3.563-35.484 0-35.485-34.922Q76.734 0 112.828 0q11.015 0 19.688 3.281v11.25q-8.673-3.75-18.75-3.75-24.141 0-24.141 22.266 0 24.14 22.781 24.14 3.375 0 7.688-1.124v-19.5h12.422zm21.796-8.39V67.5h-12.421V56.016z"
+              fill="currentColor"
+            />
+          </svg>
         </span>
         {/* Hamburger */}
         <button
@@ -180,8 +206,20 @@ export function Sidebar() {
         >
           {/* Overlay header */}
           <div className="flex h-16 items-center justify-between border-b border-slate-800 px-4">
-            <span className="text-lg font-extrabold tracking-tight text-amber-400">
-              AG.
+            <span className="h-7 w-7.75 text-lg font-extrabold tracking-tight text-amber-400">
+              <svg
+                width="155"
+                height="68"
+                viewBox="0 0 155 68"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-full w-full"
+              >
+                <path
+                  d="M12.75 67.5H0L28.453.469h13.36L70.875 67.5h-13.36l-7.64-18.281H27.609l4.266-10.782h13.5l-10.547-25.17zm119.766-3.094q-8.11 3.563-20.297 3.563-35.484 0-35.485-34.922Q76.734 0 112.828 0q11.015 0 19.688 3.281v11.25q-8.673-3.75-18.75-3.75-24.141 0-24.141 22.266 0 24.14 22.781 24.14 3.375 0 7.688-1.124v-19.5h12.422zm21.796-8.39V67.5h-12.421V56.016z"
+                  fill="currentColor"
+                />
+              </svg>
             </span>
             <button
               ref={closeButtonRef}

@@ -17,17 +17,27 @@ export function HeroSection() {
     () => {
       const mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
+        // Pre-hide all code lines before the timeline runs
+        gsap.set(".code-line", { opacity: 0 });
+
         const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
         tl.from(".hero-item", {
           opacity: 0,
           y: 40,
           duration: 0.6,
           stagger: 0.12,
-        }).from(
-          ".hero-code-card",
-          { opacity: 0, x: 40, duration: 0.8 },
-          "-=0.6",
-        );
+        })
+          .from(
+            ".hero-code-card",
+            { opacity: 0, x: 40, duration: 0.6 },
+            "-=0.6",
+          )
+          // Reveal lines sequentially once the card is visible
+          .to(
+            ".code-line",
+            { opacity: 1, duration: 0.001, stagger: 0.07, ease: "none" },
+            ">-0.1",
+          );
       });
     },
     { scope: containerRef },
@@ -72,9 +82,14 @@ export function HeroSection() {
 
           {/* Tagline */}
           <p className="hero-item mb-10 max-w-prose text-lg leading-relaxed text-muted-foreground">
-            8+ years crafting fast, accessible, pixel-perfect web experiences —
-            from React &amp; Next.js SPAs to high-converting Webflow &amp;
-            WordPress builds. Currently open to senior frontend roles.
+            A passionate and results-driven Senior Frontend Developer with over
+            8+ years of professional experience in building high-performance,
+            responsive, and pixel-perfect web applications. Proficient in modern
+            frontend ecosystems, state management, and content management
+            systems. Demonstrated track record of leading UI/UX execution for
+            both internal enterprise products and high-profile international
+            clients, working effectively in both autonomous and collaborative
+            team environments.
           </p>
 
           {/* Stats row */}
@@ -135,65 +150,114 @@ export function HeroSection() {
                 aria-label="Code snippet"
               >
                 <code>
-                  <span className="text-blue-400">const</span>{" "}
-                  <span className="text-amber-300">developer</span>{" "}
-                  <span className="text-slate-400">=</span>{" "}
-                  <span className="text-slate-400">{"{"}</span>
-                  {"\n"}
-                  {"  "}
-                  <span className="text-slate-300">name</span>
-                  <span className="text-slate-500">:</span>{" "}
-                  <span className="text-green-400">
-                    &quot;Agun Gunawan&quot;
+                  <span className="code-line block">
+                    <span className="text-blue-400">const</span>{" "}
+                    <span className="text-amber-300">developer</span>{" "}
+                    <span className="text-slate-400">=</span>{" "}
+                    <span className="text-slate-400">{"{"}</span>
                   </span>
-                  <span className="text-slate-600">,</span>
-                  {"\n"}
-                  {"  "}
-                  <span className="text-slate-300">role</span>
-                  <span className="text-slate-500">:</span>{" "}
-                  <span className="text-green-400">
-                    &quot;Frontend Dev&quot;
+                  <span className="code-line block">
+                    {"  "}
+                    <span className="text-slate-300">name</span>
+                    <span className="text-slate-500">:</span>{" "}
+                    <span className="text-green-400">
+                      &quot;Agun Gunawan&quot;
+                    </span>
+                    <span className="text-slate-600">,</span>
                   </span>
-                  <span className="text-slate-600">,</span>
-                  {"\n"}
-                  {"  "}
-                  <span className="text-slate-300">experience</span>
-                  <span className="text-slate-500">:</span>{" "}
-                  <span className="text-amber-400">&quot;8+ years&quot;</span>
-                  <span className="text-slate-600">,</span>
-                  {"\n"}
-                  {"  "}
-                  <span className="text-slate-300">stack</span>
-                  <span className="text-slate-500">: [</span>
-                  {"\n"}
-                  {"    "}
-                  <span className="text-sky-400">&quot;React&quot;</span>
-                  <span className="text-slate-600">, </span>
-                  <span className="text-sky-400">&quot;Next.js&quot;</span>
-                  <span className="text-slate-600">,</span>
-                  {"\n"}
-                  {"    "}
-                  <span className="text-sky-400">&quot;TypeScript&quot;</span>
-                  <span className="text-slate-600">, </span>
-                  <span className="text-sky-400">&quot;Webflow&quot;</span>
-                  <span className="text-slate-600">,</span>
-                  {"\n"}
-                  {"  "}
-                  <span className="text-slate-500">]</span>
-                  <span className="text-slate-600">,</span>
-                  {"\n"}
-                  {"  "}
-                  <span className="text-slate-300">status</span>
-                  <span className="text-slate-500">:</span>{" "}
-                  <span className="text-emerald-400">
-                    &quot;open to work ✓&quot;
+                  <span className="code-line block">
+                    {"  "}
+                    <span className="text-slate-300">role</span>
+                    <span className="text-slate-500">:</span>{" "}
+                    <span className="text-green-400">
+                      &quot;Frontend Dev&quot;
+                    </span>
+                    <span className="text-slate-600">,</span>
                   </span>
-                  <span className="text-slate-600">,</span>
-                  {"\n"}
-                  <span className="text-slate-400">{"}"}</span>
-                  <span className="text-slate-600">;</span>
-                  {"\n"}
-                  <span className="animate-pulse text-slate-600">▋</span>
+                  <span className="code-line block">
+                    {"  "}
+                    <span className="text-slate-300">experience</span>
+                    <span className="text-slate-500">:</span>{" "}
+                    <span className="text-amber-400">&quot;8+ years&quot;</span>
+                    <span className="text-slate-600">,</span>
+                  </span>
+                  <span className="code-line block">
+                    {"  "}
+                    <span className="text-slate-300">stack</span>
+                    <span className="text-slate-500">: [</span>
+                  </span>
+                  <span className="code-line block">
+                    {"    "}
+                    <span className="text-sky-400">&quot;React JS&quot;</span>
+                    <span className="text-slate-600">, </span>
+                    <span className="text-sky-400">&quot;Next.js&quot;</span>
+                    <span className="text-slate-600">,</span>
+                  </span>
+                  <span className="code-line block">
+                    {"    "}
+                    <span className="text-sky-400">&quot;TypeScript&quot;</span>
+                    <span className="text-slate-600">, </span>
+                    <span className="text-sky-400">&quot;JavaScript&quot;</span>
+                    <span className="text-slate-600">,</span>
+                  </span>
+                  <span className="code-line block">
+                    {"    "}
+                    <span className="text-sky-400">&quot;HTML&quot;</span>
+                    <span className="text-slate-600">, </span>
+                    <span className="text-sky-400">&quot;CSS&quot;</span>
+                    <span className="text-slate-600">,</span>
+                  </span>
+                  <span className="code-line block">
+                    {"    "}
+                    <span className="text-sky-400">&quot;SASS/SCSS&quot;</span>
+                    <span className="text-slate-600">, </span>
+                    <span className="text-sky-400">
+                      &quot;Tailwind CSS&quot;
+                    </span>
+                    <span className="text-slate-600">,</span>
+                  </span>
+                  <span className="code-line block">
+                    {"    "}
+                    <span className="text-sky-400">&quot;Webflow&quot;</span>
+                    <span className="text-slate-600">, </span>
+                    <span className="text-sky-400">&quot;WordPress&quot;</span>
+                    <span className="text-slate-600">,</span>
+                  </span>
+                  <span className="code-line block">
+                    {"    "}
+                    <span className="text-sky-400">&quot;PHP&quot;</span>
+                    <span className="text-slate-600">, </span>
+                    <span className="text-sky-400">&quot;Elementor&quot;</span>
+                    <span className="text-slate-600">,</span>
+                  </span>
+                  <span className="code-line block">
+                    {"    "}
+                    <span className="text-sky-400">&quot;Git&quot;</span>
+                    <span className="text-slate-600">, </span>
+                    <span className="text-sky-400">&quot;Figma&quot;</span>
+                    <span className="text-slate-600">,</span>
+                  </span>
+                  <span className="code-line block">
+                    {"  "}
+                    <span className="text-slate-500">]</span>
+                    <span className="text-slate-600">,</span>
+                  </span>
+                  <span className="code-line block">
+                    {"  "}
+                    <span className="text-slate-300">status</span>
+                    <span className="text-slate-500">:</span>{" "}
+                    <span className="text-emerald-400">
+                      &quot;Available for Work&quot;
+                    </span>
+                    <span className="text-slate-600">,</span>
+                  </span>
+                  <span className="code-line block">
+                    <span className="text-slate-400">{"}"}</span>
+                    <span className="text-slate-600">;</span>
+                  </span>
+                  <span className="code-line block">
+                    <span className="animate-pulse text-slate-600">▋</span>
+                  </span>
                 </code>
               </pre>
             </div>
