@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { CheckCircle, Loader2 } from "lucide-react";
+import { CheckCircle, Loader2, MessageCircle } from "lucide-react";
 
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { Button } from "@/components/ui/button";
@@ -106,6 +106,27 @@ export function ContactSection() {
           description="Have a project in mind or want to discuss an opportunity? I'd love to hear from you."
           id="contact-heading"
         />
+
+        {/* Quick contact alternatives */}
+        <div className="mb-8 flex flex-wrap gap-3">
+          <a
+            href="https://wa.me/6287830259648"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-emerald-500/40 bg-emerald-950/30 px-4 py-2 text-sm font-semibold text-emerald-400 hover:bg-emerald-950/60 focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:outline-none motion-safe:transition-colors motion-safe:duration-150"
+          >
+            <MessageCircle className="size-4" aria-hidden="true" />
+            Chat on WhatsApp
+          </a>
+          <a
+            href="https://id.linkedin.com/in/agun-awan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-4 py-2 text-sm font-semibold text-muted-foreground hover:border-slate-500 hover:text-foreground focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none motion-safe:transition-colors motion-safe:duration-150"
+          >
+            LinkedIn DM
+          </a>
+        </div>
 
         {isSubmitted ? (
           <ContactConfirmation />

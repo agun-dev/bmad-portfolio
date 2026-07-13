@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://agunawan.netlify.app/sitemap.xml
+Sitemap: https://agun-gunawan.netlify.app/sitemap.xml

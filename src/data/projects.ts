@@ -1,5 +1,12 @@
 // src/data/projects.ts
 
+export type ProjectCategory = "react" | "wordpress" | "webflow";
+
+export interface CaseStudy {
+  challenge: string;
+  outcome: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -8,38 +15,77 @@ export interface Project {
   stack: string[];
   liveUrl?: string;
   thumbnail: string;
+  featured?: boolean;
+  category: ProjectCategory;
+  caseStudy?: CaseStudy;
 }
 
 export const projects: Project[] = [
   {
+    id: "cybermatika",
+    title: "Cybermatika",
+    description:
+      "Cybermatika is a B2B cybersecurity platform offering rapid penetration testing services to companies across Indonesia. The platform markets and delivers professional pentest engagements, helping businesses identify vulnerabilities before attackers do.",
+    problem:
+      "Led the UI/UX frontend build for Cybermatika — a cybersecurity SaaS platform at SoftwareSeni. Translated Figma designs into a pixel-perfect, animated Next.js site with Payload CMS-powered content, smooth scroll transitions, and a fully responsive layout optimised for Core Web Vitals.",
+    stack: ["Next.js", "TypeScript", "Payload CMS", "Tailwind CSS"],
+    liveUrl: "https://cybermatika.com/",
+    thumbnail: "/images/projects/cybermatika.webp",
+    featured: true,
+    category: "react",
+    caseStudy: {
+      challenge:
+        "Translating a complex cybersecurity product into a visually polished, animated marketing site — with content managed by a non-technical team via headless CMS.",
+      outcome:
+        "Delivered a pixel-perfect Next.js site with smooth scroll transitions, fully responsive layouts, and strong Core Web Vitals — reducing content update time from hours to minutes with Payload CMS.",
+    },
+  },
+  {
     id: "sofwaresenicom",
     title: "Software Seni",
     description:
-      "Contributed to the frontend of SoftwareSeni, Australia's leading custom software development company, offering managed team extensions and tailored digital solutions to 180+ clients across industries including real estate, SaaS, and eCommerce.",
-    problem: "Developed the frontend for SoftwareSeni, Australia's leading custom software development company, delivering a seamless user experience across various digital solutions.",
+      "SoftwareSeni is Australia's leading custom software development company, delivering managed team extensions and tailored digital solutions to 180+ clients across real estate, SaaS, and eCommerce industries.",
+    problem:
+      "Rebuilt and optimised the AU corporate website frontend using WordPress, PHP, and custom plugins — improving page load speed, cross-browser compatibility, and overall Core Web Vitals scores.",
     stack: ["WordPress", "PHP", "CSS", "SASS/SCSS", "JavaScript", "Custom Plugins"],
     liveUrl: "https://www.softwareseni.com/",
     thumbnail: "/images/projects/softwareseni.webp",
+    category: "wordpress",
+    caseStudy: {
+      challenge:
+        "The existing AU corporate site was slow and visually dated, making it harder for the agency to attract and convert enterprise clients.",
+      outcome:
+        "Rebuilt the frontend with optimised asset loading, semantic HTML, and clean CSS architecture — measurably improving Core Web Vitals, SEO rankings, and cross-browser consistency.",
+    },
   },
   {
     id: "sofwaresenicoid",
     title: "Software Seni Indonesia",
     description:
-      "Contributed to the frontend of SoftwareSeni, Australia's leading custom software development company, offering managed team extensions and tailored digital solutions to 180+ clients across industries including real estate, SaaS, and eCommerce.",
-    problem: "Developed the frontend for SoftwareSeni, Australia's leading custom software development company, delivering a seamless user experience across various digital solutions.",
+      "The Indonesian-market corporate site for SoftwareSeni, serving as the primary touchpoint for local enterprise clients seeking nearshore software development services.",
+    problem:
+      "Rebuilt the ID corporate site on Webflow with Lottie-powered animations and custom interactions, delivering a modern, high-fidelity visual experience with zero reliance on custom backend code.",
     stack: ["Webflow", "CSS", "JavaScript", "Lottie Animations", "Custom Interactions"],
     liveUrl: "https://www.softwareseni.co.id/",
     thumbnail: "/images/projects/softwaresenicoid.webp",
+    category: "webflow",
+    caseStudy: {
+      challenge:
+        "The legacy site required developer involvement for every content update and lacked the modern, animated feel expected by international technology clients.",
+      outcome:
+        "Rebuilt on Webflow with Lottie micro-animations and custom interactions — enabling the marketing team to self-manage all content with zero developer dependency.",
+    },
   },
   {
     id: "teskacarson",
     title: "Teskacarson",
     description:
-      "Welcome to Melbourne's largest independent commercial estate agency. At Teska Carson, we know the market. We back our confidence with capability. We treat every single negotiation with the same diligence, creativity and respect. And we always aim to exceed your expectations. That’s how we’ve achieved the exceptional results that have built our reputation, our loyal clientele and our business.",
+      "Welcome to Melbourne's largest independent commercial estate agency. At Teska Carson, we know the market. We back our confidence with capability. We treat every single negotiation with the same diligence, creativity and respect.",
     problem: "Developed the frontend for Teska Carson — Melbourne's largest independent commercial real estate agency. The website serves as a professional property marketing platform featuring dynamic listings, auction schedules, and property detail pages.",
     stack: ["WordPress", "PHP", "CSS", "SASS/SCSS", "JavaScript", "Custom Plugins", "Custom Maps"],
     liveUrl: "https://www.teskacarson.com.au/",
     thumbnail: "/images/projects/teskacarson.webp",
+    category: "wordpress",
   },
   {
     id: "kay-and-burton",
@@ -50,6 +96,13 @@ export const projects: Project[] = [
     stack: ["WordPress", "PHP", "CSS", "SASS/SCSS", "JavaScript", "Custom Plugins"],
     liveUrl: "https://kayburton.com.au/",
     thumbnail: "/images/projects/knb.webp",
+    category: "wordpress",
+    caseStudy: {
+      challenge:
+        "Building a premium, multi-feature property platform for one of Australia's most prestigious luxury agencies — required flawless cross-browser consistency and a high-end visual feel.",
+      outcome:
+        "Delivered a pixel-perfect, fully responsive platform with custom WordPress plugins supporting dynamic property listings and a luxury-tier UX tailored for high-net-worth clients.",
+    },
   },
   {
     id: "eddempsey",
@@ -60,6 +113,7 @@ export const projects: Project[] = [
     stack: ["WordPress", "PHP", "CSS", "SASS/SCSS", "JavaScript", "Custom Plugins"],
     liveUrl: "https://eddempsey.ie/",
     thumbnail: "/images/projects/eddempsey.webp",
+    category: "wordpress",
   },
   {
     id: "nobelrealtors",
@@ -70,6 +124,7 @@ export const projects: Project[] = [
     stack: ["WordPress", "PHP", "CSS", "SASS/SCSS", "JavaScript", "Custom Plugins"],
     liveUrl: "https://nobelrealtors.com.au/",
     thumbnail: "/images/projects/nobelrea.webp",
+    category: "wordpress",
   },
   {
     id: "sweeneyea",
@@ -80,25 +135,29 @@ export const projects: Project[] = [
     stack: ["WordPress", "PHP", "CSS", "SASS/SCSS", "JavaScript", "Custom Plugins"],
     liveUrl: "https://sweeneyea.com.au/",
     thumbnail: "/images/projects/sweeneyea.webp",
+    category: "wordpress",
   },
   {
     id: "boatdeck",
     title: "Product of Boatdeck",
     description:
-      "Boat Deck offer a full suite of web development services and boating website design for the marine industry in Australia and New Zealand. Boat dealers, manufacturers, importers and marine businesses can have a new website in just days. All our websites for boats and marine services are easy to edit and update and you have full control over your website management.",
+      "Boat Deck offer a full suite of web development services and boating website design for the marine industry in Australia and New Zealand.",
     problem: "Created a dynamic web application for Boatdeck, a marine industry service provider, integrating real-time data and enhancing user engagement and decision-making.",
     stack: ["WordPress", "SASS/SCSS", "HTML", "JavaScript", "Custom Plugins", "Custom Themes"],
     liveUrl: "https://www.marinewebsites.com.au/portfolio/",
     thumbnail: "/images/projects/boatdeck.webp",
+    category: "wordpress",
   },
   {
     id: "gumtree",
     title: "Product of Gumtree",
     description:
-      "Sell anything on gumtree. Gumtree is the UK's biggest online classifieds site, with over 10 million live ads. Buy and sell anything from cars and property to electronics and furniture.",
+      "Gumtree is Australia's leading classifieds platform with millions of live listings across categories including real estate, pets, and vehicles.",
     problem: "Developed the frontend for Product of Gumtree, such as Pets, Guides, Real Estate, and other products of Gumtree, created a custom theme and integrated with the Gumtree API to provide a seamless user experience for buying and selling items.",
     stack: ["WordPress", "CSS", "HTML", "JavaScript", "Elementor", "Custom Themes", "Custom Plugins"],
     liveUrl: "https://gumtree.com.au/real-estate",
     thumbnail: "/images/projects/gumtree.webp",
+    category: "wordpress",
   },
 ];
+

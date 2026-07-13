@@ -2,12 +2,13 @@
 
 import { useRef } from "react";
 import { CVDownloadButton } from "@/components/shared/CVDownloadButton";
+import { AvailabilityBadge } from "@/components/shared/AvailabilityBadge";
 import { gsap, useGSAP } from "@/lib/gsap";
 
 const STATS = [
   { value: "8+", label: "Years Experience" },
   { value: "20+", label: "Projects Shipped" },
-  { value: "100%", label: "Remote Ready" },
+  { value: "100%", label: "On Site or Remote" },
 ];
 
 export function HeroSection() {
@@ -67,6 +68,11 @@ export function HeroSection() {
       >
         {/* ── Left: text content ── */}
         <div className="min-w-0 flex-1">
+          {/* Availability badge */}
+          <div className="hero-item mb-5">
+            <AvailabilityBadge />
+          </div>
+
           {/* Eyebrow */}
           <p className="hero-item mb-4 text-xs font-bold tracking-widest text-amber-400 uppercase">
             Frontend Web Developer
@@ -81,15 +87,11 @@ export function HeroSection() {
           </h1>
 
           {/* Tagline */}
-          <p className="hero-item mb-10 max-w-prose text-lg leading-relaxed text-muted-foreground">
-            A passionate and results-driven Senior Frontend Developer with over
-            8+ years of professional experience in building high-performance,
-            responsive, and pixel-perfect web applications. Proficient in modern
-            frontend ecosystems, state management, and content management
-            systems. Demonstrated track record of leading UI/UX execution for
-            both internal enterprise products and high-profile international
-            clients, working effectively in both autonomous and collaborative
-            team environments.
+          <p className="hero-item mb-10 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            8+ years shipping fast, accessible web products for international
+            clients — from pixel-perfect React & Next.js apps to high-impact
+            Webflow and WordPress builds. I bridge design and engineering to
+            deliver production-ready results.
           </p>
 
           {/* Stats row */}
@@ -108,7 +110,7 @@ export function HeroSection() {
 
           {/* CTA buttons */}
           <div className="hero-item flex flex-wrap gap-4">
-            <CVDownloadButton />
+            <CVDownloadButton className="hidden" />
             <a
               href="#contact"
               className="inline-flex items-center justify-center rounded-lg border border-slate-700 px-6 py-3 font-semibold text-muted-foreground hover:border-slate-500 hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background motion-safe:transition-colors motion-safe:duration-150"
@@ -247,7 +249,7 @@ export function HeroSection() {
                     <span className="text-slate-300">status</span>
                     <span className="text-slate-500">:</span>{" "}
                     <span className="text-emerald-400">
-                      &quot;Available for Work&quot;
+                      &quot;Open to new opportunity&quot;
                     </span>
                     <span className="text-slate-600">,</span>
                   </span>

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { Github, Linkedin } from "lucide-react";
 import { CVDownloadButton } from "@/components/shared/CVDownloadButton";
 import { AvailabilityBadge } from "@/components/shared/AvailabilityBadge";
 import { cn } from "@/lib/utils";
@@ -10,6 +11,7 @@ import type { NavItem } from "@/types";
 const NAV_ITEMS: NavItem[] = [
   { label: "Overview", href: "#hero", sectionId: "hero" },
   { label: "About", href: "#about", sectionId: "about" },
+  { label: "Experience", href: "#experience", sectionId: "experience" },
   { label: "Skills", href: "#skills", sectionId: "skills" },
   { label: "Projects", href: "#portfolio", sectionId: "portfolio" },
   { label: "Contact", href: "#contact", sectionId: "contact" },
@@ -135,6 +137,28 @@ export function Sidebar() {
             <p className="text-sm text-muted-foreground">Frontend Developer</p>
           </div>
           <AvailabilityBadge />
+
+          {/* Social links */}
+          <div className="flex items-center gap-3">
+            <a
+              href="https://github.com/agun-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile (opens in new tab)"
+              className="rounded p-1.5 text-muted-foreground hover:text-amber-400 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none motion-safe:transition-colors motion-safe:duration-150"
+            >
+              <Github className="size-4" aria-hidden="true" />
+            </a>
+            <a
+              href="https://id.linkedin.com/in/agun-awan"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile (opens in new tab)"
+              className="rounded p-1.5 text-muted-foreground hover:text-amber-400 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none motion-safe:transition-colors motion-safe:duration-150"
+            >
+              <Linkedin className="size-4" aria-hidden="true" />
+            </a>
+          </div>
         </div>
 
         {/* Nav */}
@@ -147,7 +171,7 @@ export function Sidebar() {
 
         {/* CV download pinned to bottom */}
         <div className="border-t border-slate-800 p-4">
-          <CVDownloadButton className="w-full justify-center" />
+          <CVDownloadButton className="hidden w-full justify-center" />
         </div>
       </aside>
 

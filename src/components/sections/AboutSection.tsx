@@ -23,7 +23,7 @@ export function AboutSection() {
         <div className="about-reveal">
           <SectionHeading
             eyebrow="ABOUT ME"
-            title="Background & Experience"
+            title="Know Me Better"
             id="about-heading"
           />
         </div>
