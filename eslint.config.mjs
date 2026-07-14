@@ -41,8 +41,6 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    "_bmad/**",
-    "_bmad-output/**",
     "public/**",
   ]),
 ]);
