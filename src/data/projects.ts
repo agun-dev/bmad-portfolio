@@ -86,6 +86,12 @@ export const projects: Project[] = [
     liveUrl: "https://www.teskacarson.com.au/",
     thumbnail: "/images/projects/teskacarson.webp",
     category: "wordpress",
+    caseStudy: {
+      challenge:
+        "Present a large, content-heavy commercial real estate brand in a fast, accessible format that supported listings, auctions, and lead generation without sacrificing editorial polish.",
+      outcome:
+        "Delivered a WordPress frontend that balanced performance, clarity, and user experience, helping the agency present property content more effectively across desktop and mobile.",
+    },
   },
   {
     id: "kay-and-burton",
@@ -114,6 +120,12 @@ export const projects: Project[] = [
     liveUrl: "https://eddempsey.ie/",
     thumbnail: "/images/projects/eddempsey.webp",
     category: "wordpress",
+    caseStudy: {
+      challenge:
+        "Create a polished property website for a long-established agency that needed to feel modern and trustworthy while still reflecting local market expertise.",
+      outcome:
+        "Built a responsive WordPress experience with clear service messaging and streamlined property browsing, improving usability and strengthening the agency’s digital presence.",
+    },
   },
   {
     id: "nobelrealtors",
@@ -125,6 +137,12 @@ export const projects: Project[] = [
     liveUrl: "https://nobelrealtors.com.au/",
     thumbnail: "/images/projects/nobelrea.webp",
     category: "wordpress",
+    caseStudy: {
+      challenge:
+        "Translate a boutique agency’s local-market positioning into a website that felt premium, credible, and easy to navigate for buyers and sellers.",
+      outcome:
+        "Delivered a tailored WordPress frontend with intuitive content structure and strong visual hierarchy, helping the agency showcase its expertise and local coverage more effectively.",
+    },
   },
   {
     id: "sweeneyea",
@@ -136,6 +154,12 @@ export const projects: Project[] = [
     liveUrl: "https://sweeneyea.com.au/",
     thumbnail: "/images/projects/sweeneyea.webp",
     category: "wordpress",
+    caseStudy: {
+      challenge:
+        "Refresh the digital experience for an established agency that needed better presentation of listings and an easier path for client enquiry.",
+      outcome:
+        "Implemented a cleaner, more accessible frontend that improved content presentation and conversion flow, giving the brand a more modern and conversion-focused online presence.",
+    },
   },
   {
     id: "boatdeck",
@@ -147,6 +171,12 @@ export const projects: Project[] = [
     liveUrl: "https://www.marinewebsites.com.au/portfolio/",
     thumbnail: "/images/projects/boatdeck.webp",
     category: "wordpress",
+    caseStudy: {
+      challenge:
+        "Build a dynamic marketing site for a marine service provider that needed to stand out in a niche industry while keeping content updates simple.",
+      outcome:
+        "Created a flexible WordPress experience with custom styling and interaction patterns, enabling the brand to present services and portfolio work in a more compelling and maintainable way.",
+    },
   },
   {
     id: "gumtree",
@@ -158,6 +188,30 @@ export const projects: Project[] = [
     liveUrl: "https://gumtree.com.au/real-estate",
     thumbnail: "/images/projects/gumtree.webp",
     category: "wordpress",
+    caseStudy: {
+      challenge:
+        "Support a large-scale classifieds product experience with a custom frontend that needed to remain consistent, scalable, and easy for editorial teams to manage.",
+      outcome:
+        "Delivered a tailored WordPress implementation with reusable themes and plugins, helping the product present content clearly while maintaining a consistent experience across key marketplace pages.",
+    },
+  },
+  {
+    id: "clubworx",
+    title: "Clubworx",
+    description:
+      "Clubworx is a fitness business management platform helping gyms and studios streamline scheduling, billing, and member management. The website serves as the primary marketing presence to attract and convert fitness business owners.",
+    problem:
+      "Developed the Clubworx website on Webflow — translating Figma designs into a polished, responsive webpage. Handcrafted CSS for pixel-perfect styling, JavaScript for custom interactions and animations, and optimised performance with smooth page transitions and fast load times.",
+    stack: ["Webflow", "CSS", "JavaScript", "Custom Animations"],
+    liveUrl: "https://www.clubworx.com/",
+    thumbnail: "/images/projects/clubworx.webp",
+    category: "webflow",
+    caseStudy: {
+      challenge:
+        "Translating complex Figma designs into a high-fidelity Webflow site that felt both polished and performant — requiring custom CSS architecture and JavaScript-driven animations without bloating page weight.",
+      outcome:
+        "Delivered a pixel-perfect, responsive Webflow site with smooth scroll transitions and optimised Core Web Vitals, enabling the marketing team to self-manage content while maintaining a fast, engaging user experience.",
+    },
   },
 ];
 
