@@ -43,7 +43,7 @@ function ContactConfirmation() {
       <p className="text-sm text-muted-foreground">
         You can also find me on{" "}
         <a
-          href="https://linkedin.com/in/agun-awan"
+          href="https://linkedin.com/in/agun-gunawan"
           target="_blank"
           rel="noopener noreferrer"
           className="rounded text-amber-400 underline underline-offset-4 hover:text-amber-300 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
@@ -119,7 +119,7 @@ export function ContactSection() {
             Chat on WhatsApp
           </a>
           <a
-            href="https://id.linkedin.com/in/agun-awan"
+            href="https://linkedin.com/in/agun-gunawan"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-4 py-2 text-sm font-semibold text-muted-foreground hover:border-slate-500 hover:text-foreground focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none motion-safe:transition-colors motion-safe:duration-150"

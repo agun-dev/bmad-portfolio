@@ -150,7 +150,7 @@ export function Sidebar() {
               <Github className="size-4" aria-hidden="true" />
             </a>
             <a
-              href="https://id.linkedin.com/in/agun-awan"
+              href="https://linkedin.com/in/agun-gunawan"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile (opens in new tab)"
